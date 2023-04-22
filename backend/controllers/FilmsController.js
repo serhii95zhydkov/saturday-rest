@@ -15,7 +15,7 @@ class FilmsController {
       throw new Error("Controller: unable to save film");
     }
 
-    res.status(201).json({ code: 201, message: "succes", data: film });
+    return res.status(201).json({ code: 201, message: "succes", data: film });
   });
 
   getAll = asyncHandler(async (req, res) => {
@@ -24,7 +24,7 @@ class FilmsController {
       res.status(400);
       throw new Error("Controller: unable to save film");
     }
-    res
+    return res
       .status(201)
       .json({ code: 201, message: "succes", data: films, qty: films.length });
   });
